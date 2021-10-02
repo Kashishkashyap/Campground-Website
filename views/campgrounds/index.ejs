@@ -1,0 +1,22 @@
+<% layout('layout/boilerplate') %> 
+    <a href="/campgrounds/new">New Campground</a>
+    <h1>All Campgrounds</h1>
+    <% for(let camp of campgrounds){ %>
+        <div class="card mb-3">
+            <div class="row">
+                <div class="col-md-4">
+                    <img class="img-fluid" alt="" src="<%= camp.image  %> ">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= camp.title %> </h5>
+                        <p class="card-text"><%= camp.description %> </p>
+                        <p class="card-text">
+                            <small class="text-muted"><%= camp.location %> </small>
+                        </p>
+                        <a href="/campgrounds/<%= camp._id %> " class="btn btn-primary">View <%= camp.title %> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+      <% } %> 
